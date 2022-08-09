@@ -3,37 +3,34 @@ import '@local/styles/globals.scss';
 
 import React, { ReactNode } from 'react';
 
-import { auth } from '@local/config/firebase';
-import { ThemeProvider } from '@local/contexts/theme';
-import { AuthCheck } from '@local/hoc/authCheck';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { AppLayoutProps } from 'next/app';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import dynamic from 'next/dynamic';
 
-import { AuthProvider } from '@darkwilly08/login';
-
-function AuthComp({ children }: { children: JSX.Element }) {
-  return true ? <AuthCheck>{children}</AuthCheck> : children;
-}
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#232323',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+    secondary: {
+      light: '#ff7961',
+      dark: '#ba000d',
+      main: '#FAEB37',
+      contrastText: '#000',
+    },
+  },
+});
 function MyApp({ Component, pageProps }: AppLayoutProps) {
   const getLayout: (page: ReactNode) => ReactNode = Component.getLayout || ((page: ReactNode) => page);
 
   return (
-    <AuthProvider auth={auth} isSSR={false} apiUrl="http://localhost:3030/api/auth/">
-      <ThemeProvider>
-        <AuthComp>
-          <>{getLayout(<Component {...pageProps} />)}</>
-        </AuthComp>
-      </ThemeProvider>
-    </AuthProvider>
+    <ThemeProvider theme={theme}>
+      <>{getLayout(<Component {...pageProps} />)}</>
+    </ThemeProvider>
   );
 }
 
 // SSR
-// export default MyApp;
-
-// CSR
-export default dynamic(() => Promise.resolve(MyApp), {
-  ssr: false,
-});
+export default MyApp;

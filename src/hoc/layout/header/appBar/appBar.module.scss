@@ -1,0 +1,43 @@
+@use '../../../../styles/common';
+
+.app-bar {
+  &__logo {
+    height: 40px;
+    margin-right: 5px;
+  }
+
+  &__menu {
+    justify-content: flex-end;
+    flex-grow: 1;
+
+    &--with-icon {
+      display: flex;
+    }
+
+    &--flat {
+      display: none;
+    }
+
+    &__icon {
+      color: white;
+    }
+  }
+}
+
+@include common.for-size-up(sm) {
+  .app-bar {
+    &__logo {
+      height: 64px;
+    }
+
+    &__menu {
+      &--with-icon {
+        display: none;
+      }
+
+      &--flat {
+        display: flex;
+      }
+    }
+  }
+}

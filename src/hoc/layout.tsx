@@ -1,37 +1,14 @@
 import React from 'react';
 
-import { DefaultLayout } from '@darkwilly08/layouts';
-
-const items = [
-  {
-    title: 'Home',
-    icon: 'home',
-    action: () => alert('testing'),
-    children: [
-      {
-        title: 'Test',
-        icon: 'search',
-        href: '/search',
-      },
-      {
-        title: 'Page2',
-        icon: 'home',
-        href: '/test',
-      },
-    ],
-  },
-  {
-    title: 'Dashboard',
-    icon: 'dashboard',
-    href: '/dashboard',
-  },
-  {
-    title: 'Settings',
-    icon: 'settings',
-    href: '/settings',
-  },
-];
+import { Footer } from './layout/footer';
+import { Header } from './layout/header';
 
 export function getLayout(page: JSX.Element) {
-  return <DefaultLayout items={items}>{page}</DefaultLayout>;
+  return (
+    <>
+      <Header />
+      <div>{page}</div>
+      <Footer />
+    </>
+  );
 }

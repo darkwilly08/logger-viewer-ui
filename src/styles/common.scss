@@ -1,0 +1,10 @@
+// Forwards
+@forward './breakpoints';
+@forward './mixins';
+
+// Uses
+@use './mixins';
+
+.shadow {
+  @include mixins.shadow;
+}
