@@ -1,0 +1,36 @@
+@use '../../styles/common';
+
+.carousel {
+  padding: 32px;
+  padding-top: 64px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+
+  &__content {
+    max-width: 100%;
+
+    &__title {
+      composes: text-h4 from global;
+    }
+
+    &__description {
+      text-align: justify;
+    }
+  }
+}
+
+@include common.for-size-up(md) {
+  .carousel {
+    padding: 64px;
+
+    &__content {
+      max-width: 40%;
+
+      &__title {
+        composes: text-h6 from global;
+      }
+    }
+  }
+}

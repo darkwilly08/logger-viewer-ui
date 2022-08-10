@@ -1,0 +1,41 @@
+@use '../../../../styles/common';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 9px 16px 8px 17px;
+  align-items: center;
+
+  .col {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+.title {
+  composes: text-h4 from global;
+  color: #4072e1;
+}
+
+.description {
+  composes: text-body2 from global;
+}
+
+.reviews {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+@include common.for-size-up(md) {
+  .container {
+    padding: 0;
+    flex-direction: row;
+    align-items: initial;
+
+    .col {
+      padding: 64px;
+      flex: 50%;
+    }
+  }
+}
