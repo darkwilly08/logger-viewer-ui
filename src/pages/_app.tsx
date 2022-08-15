@@ -9,14 +9,10 @@ import { AppLayoutProps } from 'next/app';
 const theme = createTheme({
   palette: {
     primary: {
-      light: '#757ce8',
       main: '#232323',
-      dark: '#002884',
       contrastText: '#fff',
     },
     secondary: {
-      light: '#ff7961',
-      dark: '#ba000d',
       main: '#FAEB37',
       contrastText: '#000',
     },

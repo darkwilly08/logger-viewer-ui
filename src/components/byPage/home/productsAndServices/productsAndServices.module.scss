@@ -1,43 +1,61 @@
 @use '../../../../styles/common';
 
 .container {
-    background-color: var(--primary-color);
-    padding: 64px;
+  background-color: var(--primary-color);
+  padding: 16px;
 
-    &__title {
-        composes: text-h5 from global;
+  &__title {
+    composes: text-h5 from global;
+    color: white;
+  }
+
+  &__description {
+    composes: text-body2 from global;
+    font-weight: 300;
+    color: white;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+    column-gap: 32px;
+    margin-top: 32px;
+
+    &__card {
+      @include common.elevation(1);
+
+      padding: 32px;
+      flex: 1;
+      width: 100%;
+
+      &__title {
+        composes: text-h6 from global;
         color: white;
-    }
+      }
 
-    &__description {
+      &__description {
         composes: text-body2 from global;
         font-weight: 300;
         color: white;
+      }
     }
+  }
+}
+
+@include common.for-size-up(md) {
+  .container {
+    padding: 64px;
 
     &__group {
-        display: flex;
-        flex-direction: row;
-        row-gap: 8px;
-        column-gap: 32px;
-        padding-top: 8px;
-        align-items: center;
+      flex-direction: row;
+      align-items: initial;
 
-        &__card {
-            @include common.elevation(1);
-
-            padding: 32px;
-    
-            &__title {
-                composes: text-h6 from global;
-                color: white;
-            }
-    
-            &__description {
-                composes: text-body2 from global;
-                font-weight: 300;
-                color: white;
-            }
-        }
+      &__card {
+        padding: 64px;
+        flex: 50%;
+      }
     }
+  }
 }

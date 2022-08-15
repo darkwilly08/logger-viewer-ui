@@ -1,64 +1,43 @@
 import React from 'react';
 
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import MuiCarousel from 'react-material-ui-carousel';
 
-import styles from './carousel.module.scss';
+import { ImageItem } from './image';
+import { Item } from './models/item';
+import { SliderItem } from './slider';
 
-interface ItemProps {
-  item: CarouselItem;
-  height: number | string;
-}
-
-function Item({ item, height }: ItemProps) {
-  const opacity = 0.4;
-
-  return (
-    <div
-      className={styles.carousel}
-      style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0, ${opacity}), rgba(0,0,0, ${opacity})), url(${item.background})`,
-        height,
-      }}
-    >
-      <div className={styles.carousel__content}>
-        <Typography color="secondary" className={styles.carousel__content__title}>
-          {item.title}
-        </Typography>
-        <p className={styles.carousel__content__description} style={{ color: '#fff' }}>
-          {item.description}
-        </p>
-        <Button className="CheckButton">Check it out!</Button>
-      </div>
-    </div>
-  );
-}
-
-interface CarouselItem {
-  id: number;
-  title: string;
-  description: string;
-  background: string;
+export enum CarouselTypeEnum {
+  IMAGE = 'image',
+  SLIDER = 'slider',
 }
 
 export interface CarouselProps {
   height?: number | string;
   showIndicators?: boolean;
-  items: CarouselItem[];
+  navButtons?: boolean;
+  items: Item[];
+  type: CarouselTypeEnum;
 }
 
-export function Carousel({ height, showIndicators, items }: CarouselProps) {
+export function Carousel({ height, showIndicators, items, type, navButtons }: CarouselProps) {
   return (
-    <MuiCarousel height={height} indicators={showIndicators}>
-      {items.map((item) => (
-        <Item key={item.id} item={item} height={height!} />
-      ))}
+    <MuiCarousel height={height} indicators={showIndicators} navButtonsAlwaysVisible={navButtons}>
+      {items.map((item) => {
+        switch (type) {
+          case CarouselTypeEnum.SLIDER:
+            return <SliderItem key={item.id} item={item} height={height!} />;
+          case CarouselTypeEnum.IMAGE:
+            return <ImageItem key={item.id} item={item} height={height!} />;
+          default:
+            return <div />;
+        }
+      })}
     </MuiCarousel>
   );
 }
 
 Carousel.defaultProps = {
   showIndicators: false,
+  navButtons: false,
   height: 'auto',
 };
