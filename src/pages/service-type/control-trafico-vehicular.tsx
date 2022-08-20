@@ -1,12 +1,12 @@
 import React from 'react';
 
+import { useConfig } from '@local/components/byPage/serviceType/useConfig';
 import { Carousel, CarouselTypeEnum } from '@local/components/carousel';
 import { getLayout } from '@local/hoc/layout';
 import Typography from '@mui/material/Typography';
 import Head from 'next/head';
 
 import styles from './control-trafico-vehicular.module.scss';
-import { useConfig } from './useConfig';
 
 export default function TrafficControl() {
   const { title } = useConfig();
