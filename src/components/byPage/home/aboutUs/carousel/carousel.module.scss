@@ -1,0 +1,131 @@
+@use '@local/styles/common';
+
+
+$color2: var(--primary-color);
+$text: #9fa2a7;
+$highlight1: var(--secondary-color);
+
+.wrapper {
+  max-width: 450px;
+  margin: 0 auto;
+
+  .speechbubble {
+    background-color: $color2;
+    color: $text;
+    font-size: .8em;
+    line-height: 1.75;
+    padding: 15px 25px;
+    margin-bottom: 75px;
+    cursor: default;
+
+
+    &:nth-child(2n)::after {
+      content: '';
+      margin-top: -30px;
+      padding-top: 0;
+      position: relative;
+      bottom: -45px;
+      left: 20px;
+      border-width: 30px 0 0 30px;
+      border-style: solid;
+      border-color: $color2 transparent;
+      display: block;
+      width: 0;
+    }
+
+    &:nth-child(2n+1) {
+      border-right: 5px solid;
+    }
+
+    &:nth-child(2n+1)::after {
+      content: '';
+      margin-top: -15px;
+      padding-top: 0;
+      position: relative;
+      bottom: -30px;
+      left: 95%;
+      border-width: 15px 15px 0 0;
+      border-style: solid;
+      border-color: $color2 transparent;
+      display: block;
+      width: 0;
+    }
+
+    &:nth-child(1) {
+      border-color: $highlight1;
+    }
+
+    p::before {
+      content: '“';
+      font-size: 40px;
+      line-height: 0;
+      display: inline-block;
+    }
+
+    .username {
+      display: inline;
+      font-style: italic;
+      float: right;
+
+      &::before {
+        content: '- ';
+      }
+    }
+  }
+}
+
+@include common.for-size-up(sm) {
+  .wrapper {
+    max-width: 450px;
+    margin: 0 auto;
+  
+    .speechbubble {
+      background-color: $color2;
+      color: $text;
+      font-size: .8em;
+      line-height: 1.75;
+      padding: 15px 25px;
+      margin-bottom: 75px;
+      cursor: default;
+  
+      &:nth-child(2n+1) {
+        border-right: 5px solid;
+      }
+  
+      &:nth-child(2n+1)::after {
+        content: '';
+        margin-top: -30px;
+        padding-top: 0;
+        position: relative;
+        bottom: -45px;
+        left: 75%;
+        border-width: 30px 30px 0 0;
+        border-style: solid;
+        border-color: $color2 transparent;
+        display: block;
+        width: 0;
+      }
+  
+      &:nth-child(1) {
+        border-color: $highlight1;
+      }
+  
+      p::before {
+        content: '“';
+        font-size: 40px;
+        line-height: 0;
+        display: inline-block;
+      }
+  
+      .username {
+        display: inline;
+        font-style: italic;
+        float: right;
+  
+        &::before {
+          content: '- ';
+        }
+      }
+    }
+  }
+}
