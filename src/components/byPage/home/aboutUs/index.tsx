@@ -21,7 +21,7 @@ export function AboutUs() {
   ];
 
   return (
-    <div className={styles.container}>
+    <div id="aboutUs" className={styles.container}>
       <div className={styles.col}>
         <Typography className={styles.title}>Sobre Tech Inside</Typography>
 

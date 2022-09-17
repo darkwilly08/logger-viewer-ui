@@ -29,7 +29,11 @@ export function SliderItem({ item, height }: SliderProps) {
         <p className={styles.carousel__content__description} style={{ color: '#fff' }}>
           {item.description}
         </p>
-        <Button className="CheckButton">Check it out!</Button>
+        {item.url && (
+          <Button href={item.url} variant="contained" color={item.color}>
+            Ver más
+          </Button>
+        )}
       </div>
     </div>
   );
