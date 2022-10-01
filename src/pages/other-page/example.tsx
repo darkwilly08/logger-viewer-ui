@@ -47,14 +47,7 @@ export default function TrafficControl() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles['traffic-control']}>
-        <CardWithImage
-          imgUrl="/assets/traffic-control-img.jpeg"
-          imgAlt="radar vehicular"
-          proportionalSize={80}
-          maxHeight={400}
-          maxWidth={400}
-          minWidth={200}
-        >
+        <CardWithImage imgUrl="/assets/traffic-control-img.jpeg" imgAlt="radar vehicular" proportionalSize={1.2}>
           <>
             <Typography className={styles['traffic-control__title']}>{title}</Typography>
             <p className={styles['traffic-control__description']}>

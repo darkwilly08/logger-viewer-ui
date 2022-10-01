@@ -4,6 +4,24 @@
 @import './misc';
 @import './breakpoints';
 
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 200 500;
+  font-display: optional;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-Medium-1.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 600 900;
+  font-display: optional;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-Bold.woff') format('woff');
+}
+
 html,
 body {
   padding: 0;

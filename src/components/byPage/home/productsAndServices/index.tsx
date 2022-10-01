@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Urls } from '@local/urls';
 import Typography from '@mui/material/Typography';
 
 import styles from './productsAndServices.module.scss';
@@ -14,7 +15,7 @@ export function ProductsAndServices() {
         tecnología de punta, diseñando y utilizando soluciones de vanguardia.
       </p>
       <div className={styles.container__group}>
-        <a className={styles.container__group__card} href="/test">
+        <a className={styles.container__group__card} href={Urls.trafficControl}>
           <img src="/assets/hardware-and-software-icon.png" alt="" height={80} />
           <Typography className={styles.container__group__card__title}>Control de tráfico vehicular</Typography>
           <p className={styles.container__group__card__description}>
@@ -22,12 +23,13 @@ export function ProductsAndServices() {
             auditoría de transito vehicular.
           </p>
         </a>
-        <a className={styles.container__group__card} href="/test">
+        <a className={styles.container__group__card} href={Urls.hardwareAndSoftwareFactory}>
           <img src="/assets/vehicle-detection-icon.png" alt="" height={80} />
-          <Typography className={styles.container__group__card__title}>Control de tráfico vehicular</Typography>
+          <Typography className={styles.container__group__card__title}>Hardware & software factory</Typography>
           <p className={styles.container__group__card__description}>
-            Contamos con una línea de productos que nos permite prestar servicios para la evaluación, medición y
-            auditoría de transito vehicular.
+            Disponemos de conocimientos y herramientas para ejecutar desarrollos de productos y soluciones tecnológicas
+            de vanguardia. que nos permite prestar servicios para la evaluación, medición y auditoría de transito
+            vehicular.
           </p>
         </a>
       </div>

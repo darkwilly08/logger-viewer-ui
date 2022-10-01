@@ -17,15 +17,15 @@ import styles from './appBar.module.scss';
 const pages = [
   {
     name: 'Inicio',
-    target: '#start',
+    target: '/#start',
   },
   {
     name: 'Nosotros',
-    target: '#aboutUs',
+    target: '/#aboutUs',
   },
   {
     name: 'Productos y servicios',
-    target: '#productsAndServices',
+    target: '/#productsAndServices',
   },
 ];
 
@@ -64,8 +64,8 @@ export function ResponsiveAppBar() {
 
           <div className={clsx({ [styles['app-bar__menu']]: true, [styles['app-bar__menu--flat']]: true })}>
             {pages.map((page) => (
-              <a className={styles['app-bar__menu__item']} href={page.target}>
-                <MenuItem key={page.name}>
+              <a key={page.name} className={styles['app-bar__menu__item']} href={page.target}>
+                <MenuItem>
                   <Typography textAlign="center">{page.name}</Typography>
                 </MenuItem>
               </a>
@@ -93,8 +93,8 @@ export function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {pages.map((page) => (
-                <a className={styles['app-bar__menu__item']} href={page.target}>
-                  <MenuItem key={page.name} onClick={handleCloseUserMenu}>
+                <a key={page.name} className={styles['app-bar__menu__item']} href={page.target}>
+                  <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </a>

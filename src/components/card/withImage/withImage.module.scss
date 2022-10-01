@@ -7,15 +7,13 @@
   align-items: center;
 
   &__img {
-    width: 100% !important;
-    max-width: 400px;
     text-align: center;
     padding-bottom: 16px;
 
     > img {
       object-fit: cover;
       max-width: 100%;
-      height: 400px;
+      height: 100%;
     }
   }
 }
@@ -25,8 +23,11 @@
     flex-direction: row;
     align-items: initial;
 
+    &__section {
+      flex: 1;
+    }
+
     &__img {
-      width: initial;
       padding-bottom: 0;
       padding-right: 16px;
     }
