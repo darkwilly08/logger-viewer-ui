@@ -8,6 +8,9 @@ export default function Document() {
       <Head>
         <link rel="preload" href="/fonts/FuturaPT-Medium-1.woff" as="font" type="font/woff" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/FuturaPT-Bold.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/FuturaPT-BoldObl.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/FuturaPT-Demi.woff" as="font" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/FuturaPT-Light.woff" as="font" type="font/woff" crossOrigin="anonymous" />
       </Head>
       <body>
         <Main />

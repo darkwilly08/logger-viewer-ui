@@ -31,8 +31,7 @@ export function AboutUs() {
         </p>
         <p className={styles.description}>
           Además tenemos las capacidades para <strong>desarrollar</strong> para nuestros clientes soluciones integrales
-          que incluyen
-          <strong>hardware, software y firmware embebido.</strong>
+          que incluyen <strong>hardware, software y firmware embebido.</strong>
         </p>
       </div>
       <div className={clsx({ [styles.col]: true })}>

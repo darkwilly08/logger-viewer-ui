@@ -2,16 +2,15 @@ import React from 'react';
 
 import { useConfig } from '@local/components/byPage/serviceType/hardwareAndSoftwareFactory/useConfig';
 import { CardWithImage } from '@local/components/card/withImage';
-import { Selector } from '@local/components/selector';
+import { MultipleDocumentViewer } from '@local/components/multipleDocumentViewer';
 import { getLayout } from '@local/hoc/layout';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Head from 'next/head';
 
 import styles from './hardware-software-factory.module.scss';
 
 export default function HardwareAndSoftwareFactory() {
-  const { title, capabilities, documents, onDocumentChange, selectedDocument } = useConfig();
+  const { title, capabilities, documents } = useConfig();
 
   return (
     <div>
@@ -45,17 +44,7 @@ export default function HardwareAndSoftwareFactory() {
             ))}
           </ul>
         </div>
-        <Selector label="Documentación" options={documents} onChange={onDocumentChange} />
-        <object className={styles['traffic-control__pdf-viewer']} data={selectedDocument.value} type="application/pdf">
-          <div className={styles['traffic-control__pdf-viewer--no-available']}>
-            <Typography className={styles['traffic-control__pdf-viewer__subtitle']}>
-              Vista previa no disponible
-            </Typography>
-            <Button variant="contained" color="info">
-              Descargar documento
-            </Button>
-          </div>
-        </object>
+        <MultipleDocumentViewer documents={documents} />
       </div>
     </div>
   );

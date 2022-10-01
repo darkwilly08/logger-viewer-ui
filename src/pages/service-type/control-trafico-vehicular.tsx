@@ -58,7 +58,12 @@ export default function TrafficControl() {
             <div className={styles.group}>
               {capabilities.map((capability) => (
                 <a className={styles.group__card} href="/test">
-                  <img src="/assets/trafficControl/availableProducts/radar.png" alt="" height={100} />
+                  <img
+                    className={styles.group__card__img}
+                    src="/assets/trafficControl/availableProducts/radar.png"
+                    alt=""
+                    height={100}
+                  />
                   <Typography className={styles.group__card__title}>{capability}</Typography>
                 </a>
               ))}

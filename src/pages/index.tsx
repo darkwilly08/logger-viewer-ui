@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
+        <title>Tech Inside</title>
       </Head>
       <div id="start">
         <Carousel type={CarouselTypeEnum.SLIDER} height={600} items={sliders} />
