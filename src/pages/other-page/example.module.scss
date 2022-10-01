@@ -1,0 +1,30 @@
+@use '../../styles/common';
+
+.traffic-control {
+  padding: 32px;
+
+  &__title {
+    composes: text-h4 from global;
+  }
+
+  &__subtitle {
+    composes: text-h6 from global;
+  }
+
+  &__description {
+    composes: text-body2 from global;
+  }
+
+  &__list {
+    &__item {
+      composes: text-body2 from global;
+      line-height: 24px;
+    }
+  }
+
+  @include common.for-size-up(md) {
+    .traffic-control {
+      padding: 64px;
+    }
+  }
+}

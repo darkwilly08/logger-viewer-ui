@@ -40,3 +40,42 @@
     }
   }
 }
+
+.group {
+  display: flex;
+  flex-flow: column wrap;
+  overflow: auto;
+  height: 200px;
+  padding: 2px;
+  column-gap: 8px;
+
+  &__card {
+    @include common.elevation(1);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    width: 150px;
+    height: 100%;
+    text-decoration: none;
+    text-align: center;
+    background-color: #efefef;
+
+    &__title {
+      composes: text-body2 from global;
+      color: #232323;
+    }
+
+    &__description {
+      composes: text-body2 from global;
+      font-weight: 300;
+      color: white;
+    }
+
+    &__img {
+      filter: brightness(100%) contrast(0%) saturate(100%) blur(0) hue-rotate(0deg);
+    }
+  }
+}

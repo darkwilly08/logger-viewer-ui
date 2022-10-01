@@ -14,7 +14,20 @@ import { IconWrapper } from '@darkwilly08/icon-wrapper';
 
 import styles from './appBar.module.scss';
 
-const pages = ['Inicio', 'Nosotros', 'Productos y servicios'];
+const pages = [
+  {
+    name: 'Inicio',
+    target: '/#start',
+  },
+  {
+    name: 'Nosotros',
+    target: '/#aboutUs',
+  },
+  {
+    name: 'Productos y servicios',
+    target: '/#productsAndServices',
+  },
+];
 
 export function ResponsiveAppBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
@@ -28,7 +41,7 @@ export function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src="/assets/techinside-icon.png" alt="logo" className={styles['app-bar__logo']} />
@@ -51,9 +64,11 @@ export function ResponsiveAppBar() {
 
           <div className={clsx({ [styles['app-bar__menu']]: true, [styles['app-bar__menu--flat']]: true })}>
             {pages.map((page) => (
-              <MenuItem key={page}>
-                <Typography textAlign="center">{page}</Typography>
-              </MenuItem>
+              <a key={page.name} className={styles['app-bar__menu__item']} href={page.target}>
+                <MenuItem>
+                  <Typography textAlign="center">{page.name}</Typography>
+                </MenuItem>
+              </a>
             ))}
           </div>
 
@@ -77,10 +92,12 @@ export function ResponsiveAppBar() {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {pages.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
+              {pages.map((page) => (
+                <a key={page.name} className={styles['app-bar__menu__item']} href={page.target}>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
+                  </MenuItem>
+                </a>
               ))}
             </Menu>
           </Box>

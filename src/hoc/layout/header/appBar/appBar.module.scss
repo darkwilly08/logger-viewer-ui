@@ -10,6 +10,11 @@
     justify-content: flex-end;
     flex-grow: 1;
 
+    &__item {
+      text-decoration: none;
+      color: inherit;
+    }
+
     &--with-icon {
       display: flex;
     }
