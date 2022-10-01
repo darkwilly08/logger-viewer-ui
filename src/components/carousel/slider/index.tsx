@@ -30,7 +30,7 @@ export function SliderItem({ item, height }: SliderProps) {
           {item.description}
         </p>
         {item.url && (
-          <Button href={item.url} variant="contained" color={item.color}>
+          <Button href={item.url} style={{ fontWeight: 200 }} variant="contained" color={item.color}>
             Ver más
           </Button>
         )}

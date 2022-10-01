@@ -11,7 +11,7 @@
 
   &__description {
     composes: text-body2 from global;
-    font-weight: 300;
+    font-weight: 100;
     color: white;
   }
 
@@ -38,7 +38,7 @@
 
       &__description {
         composes: text-body2 from global;
-        font-weight: 300;
+        font-weight: 100;
         color: white;
       }
     }

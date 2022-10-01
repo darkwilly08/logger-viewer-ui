@@ -7,19 +7,58 @@
 @font-face {
   font-family: 'Futura PT';
   font-style: normal;
-  font-weight: 200 500;
-  font-display: optional;
+  font-weight: normal;
+  font-display: auto;
   size-adjust: 120%;
-  src: url('/fonts/FuturaPT-Medium-1.woff') format('woff');
+  src: url('/fonts/FuturaPT-Medium-1.woff') format('woff'), url('/fonts/FuturaPT-Medium.ttf') format('truetype');
 }
-
+@font-face {
+  font-family: 'Futura PT';
+  font-style: oblique;
+  font-weight: normal;
+  font-display: auto;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-MediumObl.woff') format('woff'), url('/fonts/FuturaPT-MediumObl.ttf') format('truetype');
+}
 @font-face {
   font-family: 'Futura PT';
   font-style: normal;
-  font-weight: 600 900;
-  font-display: optional;
+  font-weight: bold;
+  font-display: auto;
   size-adjust: 120%;
-  src: url('/fonts/FuturaPT-Bold.woff') format('woff');
+  src: url('/fonts/FuturaPT-Bold.woff') format('woff'), url('/fonts/FuturaPT-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Futura PT';
+  font-style: oblique;
+  font-weight: bold;
+  font-display: auto;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-BoldObl.woff') format('woff'), url('/fonts/FuturaPT-BoldObl.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 100;
+  font-display: auto;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-Light.woff') format('woff'), url('/fonts/FuturaPT-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 200;
+  font-display: auto;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-Book.woff') format('woff'), url('/fonts/FuturaPT-Book.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Futura PT';
+  font-style: normal;
+  font-weight: 500;
+  font-display: auto;
+  size-adjust: 120%;
+  src: url('/fonts/FuturaPT-Demi.woff') format('woff'), url('/fonts/FuturaPT-Demi.ttf') format('truetype');
 }
 
 html,
