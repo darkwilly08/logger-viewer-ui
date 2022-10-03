@@ -4,6 +4,7 @@ import { useConfig } from '@local/components/byPage/serviceType/useConfig';
 import { CardWithImage } from '@local/components/card/withImage';
 import { Carousel, CarouselTypeEnum } from '@local/components/carousel';
 import { getLayout } from '@local/hoc/layout';
+import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Head from 'next/head';
 
@@ -57,10 +58,10 @@ export default function TrafficControl() {
             </p>
             <div className={styles.group}>
               {capabilities.map((capability) => (
-                <a key={capability.name} className={styles.group__card} href={capability.href}>
+                <Button key={capability.name} className={styles.group__card} href={capability.href}>
                   <img className={styles.group__card__img} src={capability.img} alt="" height={100} />
                   <Typography className={styles.group__card__title}>{capability.name}</Typography>
-                </a>
+                </Button>
               ))}
             </div>
           </>
