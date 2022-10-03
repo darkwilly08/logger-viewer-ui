@@ -9,8 +9,13 @@ export const useConfig = (documents: DocumentSelector[]) => {
     setSelectedDocument(document);
   };
 
+  const downloadSelectedDocument = () => {
+    window.open(selectedDocument.value, '_blank');
+  };
+
   return {
     selectedDocument,
     onDocumentChange,
+    downloadSelectedDocument,
   };
 };

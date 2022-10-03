@@ -19,6 +19,9 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     borderColor: theme.palette.primary.main,
     color: theme.palette.primary.main,
   },
+  '& .MuiInputBase-multiline': {
+    color: theme.palette.primary.main,
+  },
 }));
 
 export function Footer() {

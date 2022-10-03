@@ -57,14 +57,9 @@ export default function TrafficControl() {
             </p>
             <div className={styles.group}>
               {capabilities.map((capability) => (
-                <a className={styles.group__card} href="/test">
-                  <img
-                    className={styles.group__card__img}
-                    src="/assets/trafficControl/availableProducts/radar.png"
-                    alt=""
-                    height={100}
-                  />
-                  <Typography className={styles.group__card__title}>{capability}</Typography>
+                <a key={capability.name} className={styles.group__card} href={capability.href}>
+                  <img className={styles.group__card__img} src={capability.img} alt="" height={100} />
+                  <Typography className={styles.group__card__title}>{capability.name}</Typography>
                 </a>
               ))}
             </div>
@@ -74,8 +69,8 @@ export default function TrafficControl() {
           <Typography className={styles['traffic-control__subtitle']}>Los productos disponibles son:</Typography>
           <ul className={styles['traffic-control__list']}>
             {capabilities.map((capability) => (
-              <li key={capability} className={styles['traffic-control__list__item']}>
-                {capability}
+              <li key={capability.name} className={styles['traffic-control__list__item']}>
+                {capability.name}
               </li>
             ))}
           </ul>
