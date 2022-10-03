@@ -13,7 +13,7 @@ interface MultipleDocumentViewerProps {
 }
 
 export function MultipleDocumentViewer({ documents }: MultipleDocumentViewerProps) {
-  const { onDocumentChange, selectedDocument } = useConfig(documents);
+  const { onDocumentChange, selectedDocument, downloadSelectedDocument } = useConfig(documents);
 
   return (
     <>
@@ -21,7 +21,7 @@ export function MultipleDocumentViewer({ documents }: MultipleDocumentViewerProp
       <object className={styles['pdf-viewer']} data={selectedDocument.value} type="application/pdf">
         <div className={styles['pdf-viewer--no-available']}>
           <Typography className={styles['pdf-viewer__subtitle']}>Vista previa no disponible</Typography>
-          <Button variant="contained" color="info">
+          <Button variant="contained" color="info" onClick={downloadSelectedDocument}>
             Descargar documento
           </Button>
         </div>

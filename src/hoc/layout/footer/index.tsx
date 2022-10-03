@@ -19,6 +19,9 @@ const CssTextField = styled(TextField)(({ theme }) => ({
     borderColor: theme.palette.primary.main,
     color: theme.palette.primary.main,
   },
+  '& .MuiInputBase-multiline': {
+    color: theme.palette.primary.main,
+  },
 }));
 
 export function Footer() {
@@ -86,7 +89,7 @@ export function Footer() {
         className={clsx(styles.container__field, styles.container__row__child)}
         value={nameField.value}
         onChange={(evt) => handleNameChange(evt.target.value)}
-        label="Teléfono (opcional)"
+        label="¡Dejanos tu consulta!"
         variant={inputType}
         margin="dense"
         multiline
