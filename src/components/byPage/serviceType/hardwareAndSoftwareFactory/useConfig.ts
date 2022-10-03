@@ -17,8 +17,20 @@ export const useConfig = () => ({
       value: '/assets/documents/hardwareAndSoftware/Produccion-y-ensamble-de-equipos-de-seguridad-electronica.pdf',
     },
     {
+      name: "Paper D'Mark 2019",
+      value: '/assets/documents/hardwareAndSoftware/Paper-DMark-2019.pdf',
+    },
+    {
+      name: 'Manual top power v097b [2020]',
+      value: '/assets/documents/hardwareAndSoftware/Manual-top-power-v097b-2020.pdf',
+    },
+    {
       name: 'Manual antientradera v0.3',
       value: '/assets/documents/hardwareAndSoftware/Manual-antientradera-v0.3.pdf',
+    },
+    {
+      name: 'Sprying Machine',
+      value: '/assets/documents/hardwareAndSoftware/Spraying-Machine.pdf',
     },
   ],
 });
