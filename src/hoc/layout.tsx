@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { Footer } from './layout/footer';
 import { Header } from './layout/header';
 
 export function getLayout(page: JSX.Element) {
@@ -8,7 +7,6 @@ export function getLayout(page: JSX.Element) {
     <>
       <Header />
       <div>{page}</div>
-      <Footer />
     </>
   );
 }

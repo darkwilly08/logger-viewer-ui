@@ -1,0 +1,28 @@
+@use '../styles/common';
+
+.filters {
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 1rem;
+
+    & > * {
+      flex: calc(50% - 1rem);
+    }
+  }
+
+  &__search {
+    display: block;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+}
+
+@include common.for-size-up(sm) {
+  .filters {
+    &__detail {
+      flex-direction: row;
+    }
+  }
+}
