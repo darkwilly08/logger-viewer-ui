@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import '@local/styles/globals.scss';
+import 'react-base-table/styles.css';
 
 import React, { ReactNode } from 'react';
 
@@ -19,7 +20,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['Futura PT', 'Roboto', 'sans-serif'].join(','),
+    fontFamily: ['Roboto', 'sans-serif'].join(','),
   },
 });
 function MyApp({ Component, pageProps }: AppLayoutProps) {

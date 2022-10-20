@@ -17,15 +17,15 @@ import styles from './appBar.module.scss';
 const pages = [
   {
     name: 'Inicio',
-    target: '/#start',
+    target: '/',
   },
   {
-    name: 'Nosotros',
-    target: '/#aboutUs',
+    name: 'Logger',
+    target: '/',
   },
   {
-    name: 'Productos y servicios',
-    target: '/#productsAndServices',
+    name: 'Metrics',
+    target: '/metrics',
   },
 ];
 
@@ -59,7 +59,7 @@ export function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            TECH INSIDE
+            TECH INSIDE - Monitor
           </Typography>
 
           <div className={clsx({ [styles['app-bar__menu']]: true, [styles['app-bar__menu--flat']]: true })}>
