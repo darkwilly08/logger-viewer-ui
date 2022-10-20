@@ -2,7 +2,18 @@ import React, { useEffect, useState } from 'react';
 
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
+// Import dynamic from 'next/dynamic';
+import Badge from '@mui/material/Badge';
 import Table, { AutoResizer } from 'react-base-table';
+// Const JsonViewerNoSSR = dynamic(() => import('react-json-view'), { ssr: false });
+
+type Color = 'info' | 'warning' | 'error';
+
+const badgeColor: Record<string, Color> = {
+  info: 'info',
+  warn: 'warning',
+  error: 'error',
+};
 
 const PAGE_SIZE = 50;
 
@@ -20,22 +31,38 @@ const columns = [
     title: 'Level',
     width: 50,
     flexGrow: 0,
+    cellRenderer: ({ cellData }: { cellData: string }) => (
+      <Badge sx={{ margin: '16px' }} badgeContent={cellData} color={badgeColor[cellData]} />
+    ),
   },
   {
     key: 'tags',
     dataKey: 'tags',
     title: 'Tags',
-    width: 250,
+    width: 50,
     flexGrow: 0,
   },
   {
     key: 'message',
     dataKey: 'message',
     title: 'Message',
+    resizable: true,
     width: 500,
-    cellRenderer: ({ cellData }: { cellData: any }) => (
-      <div style={{ whiteSpace: 'pre-wrap' }}>{JSON.stringify(cellData)}</div>
-    ),
+    cellRenderer: ({ cellData }: { cellData: any }) =>
+      typeof cellData === 'object' ? (
+        // <JsonViewerNoSSR
+        //   collapsed
+        //   enableClipboard={false}
+        //   name={null}
+        //   src={cellData}
+        //   indentWidth={2}
+        //   displayDataTypes={false}
+        //   displayObjectSize={false}
+        // />
+        <div>{JSON.stringify(cellData)}</div>
+      ) : (
+        <span>{cellData}</span>
+      ),
     flexGrow: 0,
   },
 ];
@@ -144,6 +171,7 @@ export function InfiniteTable() {
           data={data}
           disabled={loading}
           footerHeight={loadingMore ? 50 : 0}
+          estimatedRowHeight={40}
           onEndReachedThreshold={300}
           onEndReached={handleEndReached}
           footerRenderer={renderFooter}
