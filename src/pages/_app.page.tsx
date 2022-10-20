@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import '@local/styles/globals.scss';
+import 'react-base-table/styles.css';
 
 import React, { ReactNode } from 'react';
 

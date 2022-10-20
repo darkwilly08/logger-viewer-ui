@@ -19,6 +19,10 @@
   }
 }
 
+.fill-space {
+  flex-grow: 1;
+}
+
 @include common.for-size-up(sm) {
   .filters {
     &__detail {

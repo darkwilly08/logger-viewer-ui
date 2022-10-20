@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Expandible } from '@local/components/expandible';
 import { Selector } from '@local/components/selector';
+import { InfiniteTable } from '@local/components/table/infiniteTable';
 import { getLayout } from '@local/hoc/layout';
 import Button from '@mui/material/Button';
 import Head from 'next/head';
@@ -10,7 +11,7 @@ import styles from './index.module.scss';
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ height: 'calc(100vh - 64px)', display: 'flex', flexDirection: 'column' }}>
       <Head>
         <title>Logger viewer</title>
       </Head>
@@ -67,6 +68,10 @@ export default function Home() {
           Buscar
         </Button>
       </Expandible>
+
+      <div className={styles['fill-space']}>
+        <InfiniteTable />
+      </div>
     </div>
   );
 }
